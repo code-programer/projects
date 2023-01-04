@@ -70,7 +70,12 @@ db.get = function(id="b36e04dc-c473-44bf-ad87-0e49fc5060b5",bas="database"){
     }
     cmd.get = function(name=""){
       db.get("00c8760e-92d0-45db-8cbb-e6376379987a", "data")
-      post(JSON.stringify(JSON.parse(db.data)[name]))
+	    if(name != ""){
+      		post(JSON.stringify(JSON.parse(db.data)[name]))
+	    }
+	    else{
+	    	post(db.data)
+	    }
     }
     function keyos(e){
       if(e.keyCode == 13){
