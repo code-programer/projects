@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>ProManager - Online project manager</title>
+  </head>
+  <body>
+    <div id="cont">
+      <div id="in-cont">
+        <input list="com" id="cmd" type="text" placeholder=".help">
+        <datalist id="com"></datalist>
+      </div>
+      <div id="res"></div>
+    </div>
+  </body>
+  <script>
+    function post(w){
+      document.getElementById("res").innerHTML = w;
+    }
+    var cmd = {};
+    cmd.help = function(){
+      post(JSON.stringify(cmd))
+    }
+    function keyos(e){
+      if(e.keyCode == 13){
+        eval(document.getElementById("cmd").value)
+      }
+    }
+    document.getElementById("cmd").addEventListener("keyup", keyos)
+  </script>
+</html>
