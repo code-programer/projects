@@ -5,7 +5,7 @@
   <body>
     <div id="cont">
       <div id="in-cont">
-        <input list="com" id="cmd" type="text" placeholder=".help">
+        <input list="com" id="cmd" type="text" placeholder="cmd.help()">
         <datalist id="com"></datalist>
       </div>
       <div id="res"></div>
@@ -18,7 +18,14 @@
     var cmd = {};
     var help = ["help"];
     cmd.help = function(){
-      post(help.toString())
+      post(help.toString().replaceAll(",","<br>"))
+    }
+    cmd.new = function(name){
+      add(name, "{}", "00c8760e-92d0-45db-8cbb-e6376379987a", "data")
+    }
+    cmd.get = function(name){
+      db.get("00c8760e-92d0-45db-8cbb-e6376379987a", "data")
+      post(db.data)
     }
     function keyos(e){
       if(e.keyCode == 13){
