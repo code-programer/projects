@@ -68,7 +68,7 @@ db.get = function(id="b36e04dc-c473-44bf-ad87-0e49fc5060b5",bas="database"){
       post(help.toString().replaceAll(",","<br>"))
     }
     cmd.new = function(name){
-      add(name, "{}", "00c8760e-92d0-45db-8cbb-e6376379987a", "data")
+      db.add(name, "{}", "00c8760e-92d0-45db-8cbb-e6376379987a", "data")
     }
     cmd.get = function(name){
       db.get("00c8760e-92d0-45db-8cbb-e6376379987a", "data")
