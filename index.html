@@ -77,6 +77,9 @@ db.get = function(id="b36e04dc-c473-44bf-ad87-0e49fc5060b5",bas="database"){
 	    	post(db.data)
 	    }
     }
+cmd.details(name, det){
+	db.add(name, "{'details':" + det + "}", "00c8760e-92d0-45db-8cbb-e6376379987a", "data")
+}
     function keyos(e){
       if(e.keyCode == 13){
         eval(document.getElementById("cmd").value)
